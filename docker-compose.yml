@@ -4,22 +4,24 @@ services:
     build: ./fast-api-pswg
     ports:
       - "8085:8085"
+
   app2:
-    build: ./fast-api-pswg
-    ports:
-      - "8086:8086"
+     build: ./fast-api-pswg
+     ports:
+      - "8086:8085"
 
   app3:
     build: ./fast-api-pswg
     ports:
-      - "8087:8087"
+      - "8087:8085"
+
+
+
+
   nginx:
     build: ./nginx
     ports:
       - "8000:80"
     depends_on:
       - app1
-      - app2
-      - app3
-
-
+      
