@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app1:
+    build: ./fast-api-pswg
+    ports:
+      - "8085:8085"
+
+  app2:
+     build: ./fast-api-pswg
+     ports:
+      - "8086:8085"
+
+  app3:
+    build: ./fast-api-pswg
+    ports:
+      - "8087:8085"
+
+
+
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "8000:80"
+    depends_on:
+      - app1
+      
